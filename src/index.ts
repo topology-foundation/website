@@ -1,5 +1,6 @@
 const background = (canvas: HTMLSpanElement) => {
-  canvas.className = `bg-[url('/assets/images/background.png')] bg-cover bg-no-repeat h-screen`;
+  canvas.className = `bg-cover bg-no-repeat h-screen`;
+  canvas.style.backgroundImage = "url('assets/images/background.png')";
 };
 
 const topology_text: () => HTMLDivElement = () => {
@@ -11,7 +12,7 @@ const topology_text: () => HTMLDivElement = () => {
   const img = document.createElement("img");
   img.className = "block mx-auto";
   img.width = 350;
-  img.src = "/assets/images/topology.png";
+  img.src = "assets/images/topology.png";
 
   const red_text = document.createElement("span");
   red_text.className = "text-[#ed1e24]";
@@ -56,11 +57,11 @@ const animated_person: () => HTMLDivElement = () => {
 
   const person = document.createElement("img");
   person.className = "fixed ml-[47vw] mt-[30vh] z-10";
-  person.src = "/assets/images/person.svg";
+  person.src = "assets/images/person.svg";
 
   const scarf = document.createElement("img");
   scarf.className = "animate-scarf fixed ml-[50vw] mt-[19vh] ";
-  scarf.src = "/assets/images/scarf.svg";
+  scarf.src = "assets/images/scarf.svg";
 
   div.appendChild(person);
   div.appendChild(scarf);

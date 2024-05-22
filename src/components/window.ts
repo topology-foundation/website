@@ -1,4 +1,8 @@
-export const window = (dimensions: string, content: HTMLElement) => {
+export const window = (
+  dimensions: string,
+  title: String,
+  content: HTMLElement,
+) => {
   const canvas = <HTMLSpanElement>document.getElementById("canvas");
 
   const base = document.createElement("div");
@@ -8,19 +12,29 @@ export const window = (dimensions: string, content: HTMLElement) => {
 
   // Header
   const header = document.createElement("div");
-  header.className =
-    "absolute top-0 left-0 w-full h-6 bg-pastel-blue border-b-2 border-pastel-grey rounded-t-2xl";
+  header.className = `absolute top-0 left-0 w-full h-10 bg-topology-bg border-b-2 border-topology-border rounded-t-2xl`;
 
   // Header buttons
   const genericBtnStyle =
-    "absolute top-1/2 h-4 w-4 border-2 border-pastel-grey rounded-full -translate-y-1/2 cursor-pointer";
+    "absolute top-1/2 h-6 w-6 border-2 border-topology-border rounded-full -translate-y-1/2 cursor-pointer";
   const genericBtnImgStyle =
-    "absolute h-3 w-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
+    "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
+
+  const close = document.createElement("button");
+  close.className =
+    genericBtnStyle + " bg-topology-red left-4 !border-topology-border";
+  close.innerHTML =
+    "<span class='" +
+    genericBtnImgStyle +
+    " text-topology-bg !h-6 !w-6'>X</span>";
+  close.onclick = () => {
+    canvas.removeChild(base);
+  };
 
   const maximize = document.createElement("button");
-  maximize.className = genericBtnStyle + " bg-pastel-green right-10";
+  maximize.className = genericBtnStyle + " bg-topology-green left-12";
   maximize.innerHTML =
-    "<img src='./assets/icons/plus.png' class='" + genericBtnImgStyle + "'>";
+    "<span class='absolute inset-0 m-auto -mt-2 h-fit w-fit text-topology-bg text-2xl'>+</span>";
   maximize.onclick = () => {
     base.className = "w-full h-full";
     header.className = header.className.replace(" rounded-t-2xl", "");
@@ -30,11 +44,8 @@ export const window = (dimensions: string, content: HTMLElement) => {
   };
 
   const minimize = document.createElement("button");
-  minimize.className = genericBtnStyle + " bg-pastel-green right-10";
-  minimize.innerHTML =
-    "<img src='./assets/icons/subtract.png' class='" +
-    genericBtnImgStyle +
-    "'>";
+  minimize.className = genericBtnStyle + " bg-pastel-green left-12";
+  minimize.innerHTML = "<span class='" + genericBtnImgStyle + "'>-</span>";
   minimize.onclick = () => {
     base.className =
       "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-pastel-grey rounded-2xl " +
@@ -45,24 +56,18 @@ export const window = (dimensions: string, content: HTMLElement) => {
     header.appendChild(maximize);
   };
 
-  const close = document.createElement("button");
-  close.className =
-    genericBtnStyle + " bg-pastel-red right-4 !border-pastel-dark-grey";
-  close.innerHTML =
-    "<img src='./assets/icons/cancel.svg' class='" +
-    genericBtnImgStyle +
-    " !h-4 !w-4'>";
-  close.onclick = () => {
-    canvas.removeChild(base);
-  };
+  const window_title = document.createElement("p");
+  window_title.className = `absolute inset-0 my-auto h-fit !left-28 text-topology-border font-medium tracking-widest`;
+  window_title.textContent = title.toUpperCase();
 
-  header.appendChild(maximize);
   header.appendChild(close);
+  header.appendChild(maximize);
+  header.appendChild(window_title);
 
   // Content area
   const contentArea = document.createElement("div");
-  contentArea.className =
-    "absolute top-6 left-0 w-full h-[calc(100%-1.5rem)] overflow-y-auto overflow-x-hidden bg-pastel-yellow rounded-b-2xl font-['dynapuff'] text-pastel-dark-grey";
+  contentArea.className = `absolute top-10 left-0 w-full h-[calc(100%-1.5rem)]
+    overflow-y-auto overflow-x-hidden bg-topology-bg rounded-b-2xl`;
   contentArea.appendChild(content);
 
   base.appendChild(header);

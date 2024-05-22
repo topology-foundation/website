@@ -1,3 +1,6 @@
+import { open_about_us } from "./windows/about_us";
+import { open_mission } from "./windows/mission";
+
 const background = (canvas: HTMLSpanElement) => {
   canvas.className += ` bg-cover bg-bottom bg-no-repeat h-screen`;
   canvas.style.backgroundImage = "url('assets/images/background.svg')";
@@ -76,28 +79,37 @@ const menu: () => HTMLDivElement = () => {
     {
       icon: "assets/images/icons/mock_icon.svg",
       name: "Mission",
+      onclick: () => {
+        open_mission();
+      },
     },
     {
       icon: "assets/images/icons/mock_icon.svg",
       name: "About Us",
+      onclick: () => {
+        open_about_us();
+      },
     },
     {
       icon: "assets/images/icons/mock_icon.svg",
       name: "Blog",
+      onclick: () => {
+        window.open("https://www.guiltygyoza.xyz/", "_blank")?.focus();
+      },
     },
   ];
 
   for (const item of items) {
-    const divEl = document.createElement("div");
-    const btnEl = document.createElement("button");
-    btnEl.innerHTML = `
+    const wrapper = document.createElement("div");
+    const button = document.createElement("button");
+    button.innerHTML = `
       <img src="${item.icon}" class="mx-auto w-16 h-16">
       <span class="block w-24 mt-2 text-base text-[#866678] font-medium">${item.name}</span>`;
-    //divEl.className = item.position;
-    btnEl.className = "align-middle focus-visible:outline-none";
-    //btnEl.onclick = btn.onclick;
-    divEl.appendChild(btnEl);
-    div.appendChild(divEl);
+
+    button.className = "align-middle focus-visible:outline-none";
+    button.onclick = item.onclick;
+    wrapper.appendChild(button);
+    div.appendChild(wrapper);
   }
 
   return div;
@@ -105,22 +117,10 @@ const menu: () => HTMLDivElement = () => {
 
 const render = () => {
   const canvas = <HTMLDivElement>document.getElementById("canvas");
-  //canvas.className = "hidden md:block";
   background(canvas);
   canvas.appendChild(animated_person());
   canvas.appendChild(topology_text());
   canvas.appendChild(menu());
-
-  // TODO maybe useless to have this
-  /*
-  const mobile_canvas = <HTMLDivElement>(
-    document.getElementById("mobile_canvas")
-  );
-  mobile_canvas.className = "md:hidden";
-  background(mobile_canvas);
-  mobile_canvas.appendChild(topology_text());
-  mobile_canvas.appendChild(menu());
-  */
 };
 
 render();

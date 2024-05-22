@@ -23,8 +23,8 @@ export const open_mission = () => {
 
   wrapper.appendChild(div);
   window(
-    `w-96 h-1/2 top-[10%] left-1/2 -translate-x-1/2
-      md:top-16 md:left-10 md:-translate-x-0
+    `w-96 max-w-3/4 h-1/2 top-[10%] left-1/2 -translate-x-1/2
+      md:top-16 md:left-10 md:translate-x-0
       xl:h-2/3 xl:top-16 xl:left-16`,
     "Mission",
     wrapper,

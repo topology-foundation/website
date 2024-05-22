@@ -47,9 +47,9 @@ export const open_blog = () => {
   div.appendChild(posts_wrapper);
 
   window(
-    `w-96 h-96
-       md:!right-[25vw] md:top-[40vh]
-       md:!right-[20vw] lg:top-[40vh]`,
+    `w-96 max-w-3/4 h-96 top-[10%] right-1/2 translate-x-1/2
+      md:top-16 md:right-10 md:translate-x-0
+      xl:top-16 xl:right-16`,
     "Blog",
     div,
   );

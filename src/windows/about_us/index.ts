@@ -22,5 +22,9 @@ export const open_about_us = () => {
     `;
 
   wrapper.appendChild(div);
-  window("w-72 h-80 md:w-96 md:h-96", "About Us", wrapper);
+  window(
+    `w-2/5 max-w-3/4 h-3/5 top-[10%] left-1/2 -translate-x-1/2`,
+    "About Us",
+    wrapper,
+  );
 };

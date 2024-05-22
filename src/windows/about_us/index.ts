@@ -8,7 +8,7 @@ export const open_about_us = () => {
   wrapper.className = `m-1 h-[calc(100%-1.5rem)] overflow-y-auto overflow-x-hidden`;
 
   const div = document.createElement("div");
-  div.className = `m-2`;
+  div.className = `m-3 text-topology-border`;
 
   div.innerText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel massa nisi. Fusce eget blandit leo. Quisque eu ipsum sit amet diam elementum imperdiet sit amet at sapien. Morbi varius libero at laoreet porta. In ac mollis ex. Fusce sagittis tristique libero at mattis. Mauris feugiat, risus sit amet dignissim pellentesque, nulla diam ornare ex, nec tempus libero mi vel ante.
 
@@ -23,7 +23,7 @@ export const open_about_us = () => {
 
   wrapper.appendChild(div);
   window(
-    `w-96 md:w-2/5 h-2/5 top-[10%] left-1/2 -translate-x-1/2`,
+    `w-96 md:w-2/5 max-w-3/4 h-1/2 top-[10%] left-1/2 -translate-x-1/2 xl:h-2/3`,
     "About Us",
     wrapper,
   );

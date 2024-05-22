@@ -1,4 +1,5 @@
 import { open_about_us } from "./windows/about_us";
+import { open_blog } from "./windows/blog";
 import { open_mission } from "./windows/mission";
 
 const background = (canvas: HTMLSpanElement) => {
@@ -59,14 +60,15 @@ const animated_person: () => HTMLDivElement = () => {
   div.className = "w-full";
 
   const person = document.createElement("img");
-  person.className = "fixed ml-[47vw] mt-[30vh] z-10";
-  person.src = "assets/images/person.svg";
+  person.className = "fixed ml-[47vw] bottom-[36vh] z-10 h-[25vh]";
+  person.src = "assets/images/sprite.svg";
 
   const scarf = document.createElement("img");
-  scarf.className = "animate-scarf fixed ml-[50vw] mt-[19vh] ";
+  scarf.className =
+    "animate-scarf fixed ml-[48vw] bottom-[1vh] h-3/4 min-h-[20vh]";
   scarf.src = "assets/images/scarf.svg";
 
-  //div.appendChild(person);
+  div.appendChild(person);
   div.appendChild(scarf);
 
   return div;
@@ -77,24 +79,24 @@ const menu: () => HTMLDivElement = () => {
   div.className = `fixed bottom-8 left-0 right-0 mx-auto flex gap-x-14 sm:gap-x-20 lg:gap-x-32 w-fit max-w-full`;
   const items = [
     {
-      icon: "assets/images/icons/mock_icon.svg",
+      icon: "assets/images/icons/mission.svg",
       name: "Mission",
       onclick: () => {
         open_mission();
       },
     },
     {
-      icon: "assets/images/icons/mock_icon.svg",
+      icon: "assets/images/icons/about_us.svg",
       name: "About Us",
       onclick: () => {
         open_about_us();
       },
     },
     {
-      icon: "assets/images/icons/mock_icon.svg",
+      icon: "assets/images/icons/blog.svg",
       name: "Blog",
       onclick: () => {
-        window.open("https://www.guiltygyoza.xyz/", "_blank")?.focus();
+        open_blog();
       },
     },
   ];
@@ -121,6 +123,9 @@ const render = () => {
   canvas.appendChild(animated_person());
   canvas.appendChild(topology_text());
   canvas.appendChild(menu());
+
+  // start with mission window opened
+  open_mission();
 };
 
 render();

@@ -16,7 +16,7 @@ module.exports = {
         },
       },
       animation: {
-        scarf: "scarf 10s infinite",
+        scarf: "scarf 8s infinite",
       },
     },
     colors: {

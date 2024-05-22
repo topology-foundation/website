@@ -7,8 +7,12 @@ export const window = (
 
   const base = document.createElement("div");
   base.className =
-    "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-topology-border rounded-2xl " +
-    dimensions;
+    `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+     border-2 border-topology-border rounded-2xl z-10 ` + dimensions;
+  const base_shadow = document.createElement("div");
+  base_shadow.className =
+    `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+     bg-topology-border rounded-2xl ml-2 mt-2 ` + dimensions;
 
   // Header
   const header = document.createElement("div");
@@ -29,6 +33,7 @@ export const window = (
     " text-topology-bg !h-6 !w-6'>X</span>";
   close.onclick = () => {
     canvas.removeChild(base);
+    canvas.removeChild(base_shadow);
   };
 
   const maximize = document.createElement("button");
@@ -73,4 +78,5 @@ export const window = (
   base.appendChild(header);
   base.appendChild(contentArea);
   canvas.appendChild(base);
+  canvas.appendChild(base_shadow);
 };

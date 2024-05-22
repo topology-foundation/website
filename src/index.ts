@@ -60,7 +60,7 @@ const animated_person: () => HTMLDivElement = () => {
   div.className = "w-full";
 
   const person = document.createElement("img");
-  person.className = "fixed ml-[47vw] bottom-[36vh] z-10 h-[25vh]";
+  person.className = "fixed ml-[47vw] bottom-[36vh] h-[25vh] z-10";
   person.src = "assets/images/sprite.svg";
 
   const scarf = document.createElement("img");

@@ -6,13 +6,13 @@ export const window = (
   const canvas = <HTMLSpanElement>document.getElementById("canvas");
 
   const base = document.createElement("div");
+  // top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
   base.className =
-    `window fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-     border-2 border-topology-border rounded-2xl z-50 ` + dimensions;
+    `window fixed border-2 border-topology-border rounded-2xl z-50 ` +
+    dimensions;
   const base_shadow = document.createElement("div");
   base_shadow.className =
-    `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-     bg-topology-border rounded-2xl ml-2 mt-2 z-40 ` + dimensions;
+    `fixed bg-topology-border rounded-2xl ml-2 mt-2 z-40 ` + dimensions;
 
   // Header
   const header = document.createElement("div");

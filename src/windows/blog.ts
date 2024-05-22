@@ -46,5 +46,11 @@ export const open_blog = () => {
   div.appendChild(initial_text);
   div.appendChild(posts_wrapper);
 
-  window("w-72 h-80 md:w-96 md:h-96", "Blog", div);
+  window(
+    `w-96 h-96
+       md:!right-[25vw] md:top-[40vh]
+       md:!right-[20vw] lg:top-[40vh]`,
+    "Blog",
+    div,
+  );
 };

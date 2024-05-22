@@ -22,6 +22,5 @@ export const open_mission = () => {
     `;
 
   wrapper.appendChild(div);
-
   window("w-72 h-80 md:w-96 md:h-96", "Mission", wrapper);
 };

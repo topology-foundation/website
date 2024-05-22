@@ -1,11 +1,14 @@
-import { window } from "../components/window";
+import { window } from "../../components/window";
 
 export const open_about_us = () => {
   if (<HTMLSpanElement>document.getElementById("about_us")) return;
-  const div = document.createElement("div");
-  div.id = "about_us";
+  const wrapper = document.createElement("div");
+  wrapper.id = "about_us";
 
-  div.className = "m-3 overflow-y-auto overflow-x-hidden";
+  wrapper.className = `m-1 h-[calc(100%-1.5rem)] overflow-y-auto overflow-x-hidden`;
+
+  const div = document.createElement("div");
+  div.className = `m-2`;
 
   div.innerText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel massa nisi. Fusce eget blandit leo. Quisque eu ipsum sit amet diam elementum imperdiet sit amet at sapien. Morbi varius libero at laoreet porta. In ac mollis ex. Fusce sagittis tristique libero at mattis. Mauris feugiat, risus sit amet dignissim pellentesque, nulla diam ornare ex, nec tempus libero mi vel ante.
 
@@ -18,5 +21,6 @@ export const open_about_us = () => {
   Suspendisse aliquam nibh a ipsum suscipit facilisis. Nam at ligula et erat accumsan condimentum et ac tellus. Nam semper tellus sit amet ante convallis, sed mollis est egestas. Vivamus odio lectus, consectetur id magna in, vestibulum auctor velit. Vivamus diam dui, sodales vel ex vel, malesuada viverra quam. Maecenas nibh risus, vestibulum sit amet sapien eget, finibus accumsan arcu. Duis porta leo ut velit auctor, in consequat metus pellentesque. Nulla elit erat, fermentum ut tincidunt a, suscipit et orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus blandit nisi non sem accumsan faucibus. Vestibulum eleifend velit eu urna faucibus, sit amet eleifend est pellentesque. Phasellus vehicula purus sit amet fermentum dignissim. Etiam scelerisque ac eros in accumsan.
     `;
 
-  window("w-72 h-80 md:w-96 md:h-96", "About Us", div);
+  wrapper.appendChild(div);
+  window("w-72 h-80 md:w-96 md:h-96", "About Us", wrapper);
 };

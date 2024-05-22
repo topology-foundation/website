@@ -9,7 +9,7 @@ const background = (canvas: HTMLSpanElement) => {
 
 const topology_text: () => HTMLDivElement = () => {
   const div = document.createElement("div");
-  div.className = `fixed bottom-36 lg:bottom-44 w-full`;
+  div.className = `fixed bottom-36 lg:bottom-44 w-full z-20`;
 
   const wrapper = document.createElement("div");
   wrapper.className = `text-center justify-center mx-auto flex flex-col gap-y-8 max-w-lg`;
@@ -76,7 +76,7 @@ const animated_person: () => HTMLDivElement = () => {
 
 const menu: () => HTMLDivElement = () => {
   const div = document.createElement("div");
-  div.className = `fixed bottom-8 left-0 right-0 mx-auto flex gap-x-14 sm:gap-x-20 lg:gap-x-32 w-fit max-w-full`;
+  div.className = `fixed bottom-8 left-0 right-0 mx-auto flex gap-x-14 sm:gap-x-20 lg:gap-x-32 w-fit max-w-full overflow-visible`;
   const items = [
     {
       icon: "assets/images/icons/mission.svg",
@@ -102,16 +102,15 @@ const menu: () => HTMLDivElement = () => {
   ];
 
   for (const item of items) {
-    const wrapper = document.createElement("div");
     const button = document.createElement("button");
     button.innerHTML = `
       <img src="${item.icon}" class="mx-auto w-16 h-16">
       <span class="block w-24 mt-2 text-base text-[#866678] font-medium">${item.name}</span>`;
 
-    button.className = "align-middle focus-visible:outline-none";
+    button.className =
+      "align-middle focus-visible:outline-none hover:scale-105 hover:transition-all";
     button.onclick = item.onclick;
-    wrapper.appendChild(button);
-    div.appendChild(wrapper);
+    div.appendChild(button);
   }
 
   return div;

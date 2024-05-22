@@ -64,8 +64,8 @@ const animated_person: () => HTMLDivElement = () => {
   person.src = "assets/images/sprite.svg";
 
   const scarf = document.createElement("img");
-  scarf.className =
-    "animate-scarf fixed ml-[48vw] bottom-[1vh] h-3/4 min-h-[20vh]";
+  scarf.className = "animate-scarf fixed ml-[48vw] bottom-[1vh] h-3/4";
+  scarf.style.minInlineSize = "90vh";
   scarf.src = "assets/images/scarf.svg";
 
   div.appendChild(person);

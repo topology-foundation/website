@@ -7,7 +7,7 @@ export const window = (
 
   const base = document.createElement("div");
   base.className =
-    `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    `window fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
      border-2 border-topology-border rounded-2xl z-50 ` + dimensions;
   const base_shadow = document.createElement("div");
   base_shadow.className =
@@ -75,7 +75,7 @@ export const window = (
   // Content area
   const contentArea = document.createElement("div");
   contentArea.className = `absolute top-10 left-0 w-full h-[calc(100%-1.5rem)]
-    overflow-y-auto overflow-x-hidden bg-topology-bg rounded-b-2xl`;
+    bg-topology-bg rounded-b-2xl`;
   contentArea.appendChild(content);
 
   base.appendChild(header);

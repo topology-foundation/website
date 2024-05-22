@@ -1,11 +1,11 @@
 const background = (canvas: HTMLSpanElement) => {
-  canvas.className = `bg-cover bg-no-repeat h-screen`;
-  canvas.style.backgroundImage = "url('assets/images/background.png')";
+  canvas.className += ` bg-cover bg-bottom bg-no-repeat h-screen`;
+  canvas.style.backgroundImage = "url('assets/images/background.svg')";
 };
 
 const topology_text: () => HTMLDivElement = () => {
   const div = document.createElement("div");
-  div.className = `fixed bottom-60 w-full`;
+  div.className = `fixed bottom-36 lg:bottom-44 w-full`;
 
   const wrapper = document.createElement("div");
   wrapper.className = `text-center justify-center mx-auto flex flex-col gap-y-8 max-w-lg`;
@@ -63,17 +63,64 @@ const animated_person: () => HTMLDivElement = () => {
   scarf.className = "animate-scarf fixed ml-[50vw] mt-[19vh] ";
   scarf.src = "assets/images/scarf.svg";
 
-  div.appendChild(person);
+  //div.appendChild(person);
   div.appendChild(scarf);
 
   return div;
 };
 
+const menu: () => HTMLDivElement = () => {
+  const div = document.createElement("div");
+  div.className = `fixed bottom-8 left-0 right-0 mx-auto flex gap-x-14 sm:gap-x-20 lg:gap-x-32 w-fit max-w-full`;
+  const items = [
+    {
+      icon: "assets/images/icons/mock_icon.svg",
+      name: "Mission",
+    },
+    {
+      icon: "assets/images/icons/mock_icon.svg",
+      name: "About Us",
+    },
+    {
+      icon: "assets/images/icons/mock_icon.svg",
+      name: "Blog",
+    },
+  ];
+
+  for (const item of items) {
+    const divEl = document.createElement("div");
+    const btnEl = document.createElement("button");
+    btnEl.innerHTML = `
+      <img src="${item.icon}" class="mx-auto w-16 h-16">
+      <span class="block w-24 mt-2 text-base text-[#866678] font-medium">${item.name}</span>`;
+    //divEl.className = item.position;
+    btnEl.className = "align-middle focus-visible:outline-none";
+    //btnEl.onclick = btn.onclick;
+    divEl.appendChild(btnEl);
+    div.appendChild(divEl);
+  }
+
+  return div;
+};
+
 const render = () => {
-  const canvas = <HTMLSpanElement>document.getElementById("canvas");
+  const canvas = <HTMLDivElement>document.getElementById("canvas");
+  //canvas.className = "hidden md:block";
   background(canvas);
   canvas.appendChild(animated_person());
   canvas.appendChild(topology_text());
+  canvas.appendChild(menu());
+
+  // TODO maybe useless to have this
+  /*
+  const mobile_canvas = <HTMLDivElement>(
+    document.getElementById("mobile_canvas")
+  );
+  mobile_canvas.className = "md:hidden";
+  background(mobile_canvas);
+  mobile_canvas.appendChild(topology_text());
+  mobile_canvas.appendChild(menu());
+  */
 };
 
 render();

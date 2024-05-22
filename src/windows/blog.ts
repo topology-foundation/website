@@ -14,18 +14,32 @@ const posts = [
 ];
 
 export const open_blog = () => {
+  if (<HTMLSpanElement>document.getElementById("blog")) return;
   const div = document.createElement("div");
+  div.id = "blog";
 
   const initial_text = document.createElement("p");
-  initial_text.innerText = "Read the latest blog posts";
+  initial_text.className =
+    "mt-5 mb-2 text-center font-medium text-topology-border";
+  initial_text.innerText = "Read the latest blog posts".toUpperCase();
 
   const posts_wrapper = document.createElement("div");
 
   for (const post of posts) {
-    const post_element = document.createElement("a");
-    post_element.innerText = `${post.title} (${post.date})`;
-    post_element.href = post.url;
-    post_element.target = "_blank";
+    const post_element = document.createElement("span");
+    post_element.className = `mx-3 mt-4 flex flex-col`;
+    const link = document.createElement("a");
+    link.className = `text-[#f79e88] hover:text-[#fdd4ba]`;
+    link.innerText = post.title;
+    link.href = post.url;
+    link.target = "_blank";
+    const date = document.createElement("span");
+    date.className = `text-xs text-[#866678]`;
+    date.innerText = `${post.date}`;
+
+    post_element.appendChild(link);
+    post_element.appendChild(date);
+
     posts_wrapper.appendChild(post_element);
   }
 

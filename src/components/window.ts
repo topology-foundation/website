@@ -8,11 +8,11 @@ export const window = (
   const base = document.createElement("div");
   base.className =
     `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-     border-2 border-topology-border rounded-2xl z-10 ` + dimensions;
+     border-2 border-topology-border rounded-2xl z-50 ` + dimensions;
   const base_shadow = document.createElement("div");
   base_shadow.className =
     `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-     bg-topology-border rounded-2xl ml-2 mt-2 ` + dimensions;
+     bg-topology-border rounded-2xl ml-2 mt-2 z-40 ` + dimensions;
 
   // Header
   const header = document.createElement("div");
@@ -30,7 +30,7 @@ export const window = (
   close.innerHTML =
     "<span class='" +
     genericBtnImgStyle +
-    " text-topology-bg !h-6 !w-6'>X</span>";
+    " text-topology-bg !h-6 !w-6 font-sans'>X</span>";
   close.onclick = () => {
     canvas.removeChild(base);
     canvas.removeChild(base_shadow);
@@ -39,26 +39,29 @@ export const window = (
   const maximize = document.createElement("button");
   maximize.className = genericBtnStyle + " bg-topology-green left-12";
   maximize.innerHTML =
-    "<span class='absolute inset-0 m-auto -mt-2 h-fit w-fit text-topology-bg text-2xl'>+</span>";
+    "<span class='absolute inset-0 m-auto -mt-2 h-fit w-fit text-topology-bg text-2xl font-sans'>+</span>";
   maximize.onclick = () => {
-    base.className = "w-full h-full";
+    base.className = "w-full h-full relative z-50";
     header.className = header.className.replace(" rounded-t-2xl", "");
     contentArea.className = contentArea.className.replace(" rounded-b-2xl", "");
+    canvas.removeChild(base_shadow);
     header.removeChild(maximize);
     header.appendChild(minimize);
   };
 
   const minimize = document.createElement("button");
-  minimize.className = genericBtnStyle + " bg-pastel-green left-12";
-  minimize.innerHTML = "<span class='" + genericBtnImgStyle + "'>-</span>";
+  minimize.className = genericBtnStyle + " bg-topology-green left-12";
+  minimize.innerHTML =
+    "<span class='absolute inset-0 m-auto -mt-2 h-fit w-fit text-topology-bg text-2xl font-sans'>-</span>";
   minimize.onclick = () => {
     base.className =
-      "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-pastel-grey rounded-2xl " +
-      dimensions;
+      `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+       border-2 border-topology-border rounded-2xl z-50 ` + dimensions;
     header.className = header.className + " rounded-t-2xl";
     contentArea.className = contentArea.className + " rounded-b-2xl";
     header.removeChild(minimize);
     header.appendChild(maximize);
+    canvas.appendChild(base_shadow);
   };
 
   const window_title = document.createElement("p");

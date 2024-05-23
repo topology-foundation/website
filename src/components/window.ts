@@ -55,8 +55,8 @@ export const window = (
     "<span class='absolute inset-0 m-auto -mt-2 h-fit w-fit text-topology-bg text-2xl font-sans'>-</span>";
   minimize.onclick = () => {
     base.className =
-      `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-       border-2 border-topology-border rounded-2xl z-50 ` + dimensions;
+      `window fixed border-2 border-topology-border rounded-2xl z-50 ` +
+      dimensions;
     header.className = header.className + " rounded-t-2xl";
     contentArea.className = contentArea.className + " rounded-b-2xl";
     header.removeChild(minimize);

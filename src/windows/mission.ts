@@ -18,12 +18,12 @@ export const open_mission = () => {
   const hiring_div = document.createElement("div");
   hiring_div.className = `mt-5 flex flex-col w-fit mx-auto`;
   hiring_div.innerHTML = `
-    <span class='text-topology-border font-semibold'>WE ARE HIRING</span>
+    <span class='text-center text-topology-border font-semibold'>JOIN US</span>
     <a
-      class='mt-2 border rounded-lg border-topology-border bg-[#f79e88] text-[#fff1ea] text-center'
-      href='https://topology-gg.notion.site/Open-roles-07cb37cfd785478d959f1f1859f41c67'
+      class='mt-2 px-2 border rounded-lg border-topology-border bg-[#f79e88] text-[#fff1ea] text-center'
+      href='https://discord.gg/k9Rcc7NuYc'
       target='_blank'>
-      Open Roles
+      Discord
     </a>
   `;
 

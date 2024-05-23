@@ -12,7 +12,7 @@ export const open_about_us = () => {
   div.style.direction = "ltr";
 
   div.innerHTML = `Since 2020, Topology has embarked on a singular mission to help
-  humanity create <a class='text-[#f79e88] hover:text-[#fdd4ba]' href='https://memory.community/?twclid=2-2ow04vbir30vgnerdvjfrg7w5'>rich, affectionate, and sustainable realities</a>
+  humanity create <a class='text-[#f79e88] hover:text-[#fdd4ba]' href='https://memory.community/?twclid=2-2ow04vbir30vgnerdvjfrg7w5' target='_blank'>rich, affectionate, and sustainable realities</a>
   on the internet. We believe this to be humanity’s next important undertaking on the internet: to freely exist on sovereign, persistent,
   and interoperable realities.
   <br/><br/>

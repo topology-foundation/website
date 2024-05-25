@@ -2,6 +2,11 @@ import { window } from "../components/window";
 
 const posts = [
   {
+    title: "Super Mario in CRDT",
+    date: "May 22, 2024",
+    url: "https://www.guiltygyoza.xyz/2024/05/super-mario-in-crdt",
+  },
+  {
     title: "Topology protocol walkthrough",
     date: "Apr 26, 2024",
     url: "https://www.guiltygyoza.xyz/2024/04/topology-protocol-walkthrough",

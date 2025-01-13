@@ -1,27 +1,170 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Topology</title>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="assets/favicon/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="assets/favicon/favicon-32x32.png"
-        />
-        <link rel="stylesheet" href="./static/css/style.css" />
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Topology</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="assets/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="assets/favicon/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="./static/css/style.css" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
 
-    <body>
-        <div id="canvas"></div>
+			html {
+				font-family: "IBM Plex Mono", monospace;
+			}
 
-        <script src="./static/bundle/script.js"></script>
-    </body>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				max-width: calc(min(80ch, 100vw));
+				margin: 0 auto;
+				line-height: 1.6;
+				padding: 20px;
+			}
+
+			h1 {
+				font-size: 2rem;
+				margin-bottom: 16px;
+				margin-top: 16px;
+			}
+
+			h3 {
+				margin-top: 40px;
+			}
+
+			p {
+				font-size: 1rem;
+			}
+
+			a {
+				color: blue;
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+
+			hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border: 0;
+				border-top: 1px solid #333;
+			}
+
+			ul {
+				list-style-type: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-blue">Topology</h1>
+		<div class="content">
+			<p>
+				Topology introduces
+				<a
+					style="color: #e16031"
+					href="https://www.notion.so/topology-gg/Litepaper-public-draft-1767bba4a00780249a3df65c3fb0d727"
+					>RAM-like structures to the world computer<sup>1</sup></a
+				>
+				for the first time.
+			</p>
+
+			<p>
+				Founded in late 2021, we are the protocol builders of
+				<a
+					style="color: #cc7a0a"
+					href="https://paper.topology.gg/drp-whitepaper.pdf"
+					>Distributed Real-time Programs<sup>2</sup></a
+				>, an open peer-to-peer internet protocol, and
+				<a style="color: #269d69" href="https://twitter.com/manduchain"
+					>Mandu<sup>3</sup></a
+				>, an orchestration blockchain.
+			</p>
+
+			<p>
+				Combined with existing
+				<a
+					style="color: #1c8ca8"
+					href="https://vitalik.eth.limo/general/2023/12/28/cypherpunk.html"
+					>distributed hard drives<sup>4</sup></a
+				>
+				like L1s and L2s, the world computer can now compute in real
+				time.
+			</p>
+
+			<p>
+				With our in-person office in Kreuzberg, Berlin, our team is
+				distributed around the world: London, Boston, Paris, Seoul, Rio
+				de Janeiro, Taipei, Dammam, Chiangmai, Hanoi, Ho Chi Minh City,
+				and more.
+			</p>
+
+			<p>
+				Our team brings experience from Harvard, MIT, Ethereum
+				Foundation, Lambda Class, IOI, World Finals ICPC, IPhO, IMO, and
+				more. We love to challenge ourselves to make a better world
+				computer for humanity.
+			</p>
+
+			<p>
+				Are you interested in joining this revolution? Contact us:
+				<a href="mailto:contact@topology.gg"
+					>contact [at] topology [dot] gg</a
+				>
+			</p>
+			<hr style="border-style: dashed" />
+		</div>
+
+		<p>References</p>
+		<ul>
+			<li>
+				<span>[1] Topology Litepaper</span>
+				<a
+					href="https://www.notion.so/topology-gg/Litepaper-public-draft-1767bba4a00780249a3df65c3fb0d727"
+					>https://www.notion.so/topology-gg/Litepaper-public-draft-1767bba4a00780249a3df65c3fb0d727</a
+				>
+			</li>
+			<li>
+				<span>[2] Distributed Real-time Programs Whitepaper</span>
+				<a href="https://paper.topology.gg/drp-whitepaper.pdf"
+					>https://paper.topology.gg/drp-whitepaper.pdf</a
+				>
+			</li>
+			<li>
+				<span>[3] Mandu</span>
+				<a href="https://twitter.com/manduchain"
+					>https://twitter.com/manduchain</a
+				>
+			</li>
+			<li>
+				<span>[4] Vitalik Buterin's Cypherpunk Manifesto</span>
+				<a
+					href="https://vitalik.eth.limo/general/2023/12/28/cypherpunk.html"
+					>https://vitalik.eth.limo/general/2023/12/28/cypherpunk.html</a
+				>
+			</li>
+		</ul>
+	</body>
 </html>
